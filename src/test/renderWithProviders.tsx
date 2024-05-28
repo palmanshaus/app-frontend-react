@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import type { PropsWithChildren } from 'react';
 
-import { createTheme, MuiThemeProvider } from '@material-ui/core';
+import { MuiThemeProvider, unstable_createMuiStrictModeTheme } from '@material-ui/core';
 import { QueryClient } from '@tanstack/react-query';
 import { act, render as rtlRender, waitFor } from '@testing-library/react';
 import dotenv from 'dotenv';
@@ -264,7 +264,7 @@ interface ProvidersProps extends PropsWithChildren {
 }
 
 function DefaultProviders({ children, queries, queryClient, Router = DefaultRouter }: ProvidersProps) {
-  const theme = createTheme(AltinnAppTheme);
+  const theme = unstable_createMuiStrictModeTheme(AltinnAppTheme);
   return (
     <AppQueriesProvider
       {...queries}

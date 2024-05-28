@@ -33,7 +33,8 @@
     "simple-import-sort",
     "cypress",
     "unused-imports",
-    "testing-library"
+    "testing-library",
+    "react-compiler"
   ],
   "settings": {
     "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
@@ -54,6 +55,7 @@
     "schemas/**/*.json"
   ],
   "rules": {
+    "react-compiler/react-compiler": "error",
     "curly": ["error", "all"],
     "object-shorthand": ["error", "always"],
     "arrow-body-style": ["error", "as-needed"],

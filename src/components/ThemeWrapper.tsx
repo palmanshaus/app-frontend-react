@@ -1,7 +1,7 @@
 import React from 'react';
 import type { ReactNode } from 'react';
 
-import { createTheme, ThemeProvider } from '@material-ui/core';
+import { ThemeProvider, unstable_createMuiStrictModeTheme } from '@material-ui/core';
 
 import { useCurrentLanguage } from 'src/features/language/LanguageProvider';
 import { useIsMobile, useIsTablet } from 'src/hooks/useIsMobile';
@@ -43,7 +43,7 @@ export const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
 
   return (
     <ThemeProvider
-      theme={createTheme({
+      theme={unstable_createMuiStrictModeTheme({
         ...AltinnAppTheme,
         direction,
       })}
